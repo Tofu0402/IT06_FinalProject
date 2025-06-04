@@ -18,7 +18,7 @@ public class SummonFallingObject : MonoBehaviour
     void Update()
     {
         if(i == interval){
-            Instantiate(prefab, new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z), Quaternion.identity);
+            Instantiate(prefab, new Vector3(transform.localPosition.x+Random.Range(-4,10), transform.localPosition.y, transform.localPosition.z), Quaternion.identity);
             i = 0;
         }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -26,5 +27,11 @@ public class GameManager : MonoBehaviour
     {
         ClearCanvas.SetActive(true);
         FallObject.SetActive(false);
+        Invoke(nameof(ReLoadScene),5f);
+    }
+
+    private void ReLoadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
